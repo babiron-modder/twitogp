@@ -17,7 +17,7 @@ definePageMeta({
 
 const route = useRoute();
 const URL = `/api/oembed?url=https%3A%2F%2Ftwitter.com%2F${route.params.username}%2Fstatus%2F${route.params.post_id}&widget=Tweet`;
-const { data } = await useFetch(URL,{key: "cash", onResponse({ request, response, options }) {
+const { data } = await useFetch(URL,{key: "cash", onResponse: ({ request, response, options }) => {
     let response_data = {};
     // 応答データの処理
     console.log("============================");
